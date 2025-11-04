@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BasisPengetahuan extends Model
+class BobotGejala extends Model
 {
     protected $guarded = ['id'];
 

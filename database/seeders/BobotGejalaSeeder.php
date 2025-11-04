@@ -5,11 +5,11 @@ namespace Database\Seeders;
 use App\Models\Gejala;
 use App\Models\Penyakit;
 use Illuminate\Database\Seeder;
-use App\Models\BasisPengetahuan;
+use App\Models\BobotGejala;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class BasisPengetahuanSeeder extends Seeder
+class BobotGejalaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -59,7 +59,7 @@ class BasisPengetahuanSeeder extends Seeder
             $p5->id,
         ];
 
-        DB::table('basis_pengetahuans')->truncate(); // <-- letakkan di luar transaction()
+        DB::table('bobot_gejalas')->truncate(); // <-- letakkan di luar transaction()
 
         DB::transaction(function () use ($matrix, $penyakitIds) {
             $rows = [];
@@ -80,7 +80,7 @@ class BasisPengetahuanSeeder extends Seeder
                 }
             }
 
-            BasisPengetahuan::insert($rows);
+            BobotGejala::insert($rows);
         });
     }
 }

@@ -17,7 +17,7 @@ class Penyakit extends Model
 
     public function gejalas()
     {
-        return $this->belongsToMany(Gejala::class, 'basis_pengetahuans')
+        return $this->belongsToMany(Gejala::class, 'bobot_gejalas')
             ->withPivot('bobot')
             ->withTimestamps();
     }

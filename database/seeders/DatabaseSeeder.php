@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(GejalaSeeder::class);
         $this->call(PenyakitSeeder::class);
-        $this->call(BasisPengetahuanSeeder::class);
+        $this->call(BobotGejalaSeeder::class);
     }
 }

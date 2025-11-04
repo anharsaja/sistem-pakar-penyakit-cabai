@@ -31,6 +31,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('penyakit.index') }}">Data Penyakit</a></li>
                         <li><a href="{{ route('gejala.index') }}">Data Gejala</a></li>
+                        <li><a href="{{ route('gejala.bobot') }}">Bobot Gejala</a></li>
                     </ul>
                 </li>
             </ul>

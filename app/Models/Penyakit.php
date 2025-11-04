@@ -21,4 +21,11 @@ class Penyakit extends Model
             ->withPivot('bobot')
             ->withTimestamps();
     }
+
+    public function gejalaPakar()
+    {
+        return $this->belongsToMany(Gejala::class, 'bobot_pakar')
+            ->withPivot('mb', 'md')
+            ->withTimestamps();
+    }
 }

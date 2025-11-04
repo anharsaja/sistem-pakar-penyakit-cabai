@@ -25,11 +25,12 @@
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="mdi mdi-table"></i><span> Tables </span>
+                        <i class="mdi mdi-table"></i><span> Data Terkait </span>
                         <span class="float-right"><i class="mdi mdi-chevron-right"></i></span>
                     </a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('penyakit.index') }}">Data Penyakit</a></li>
+                        <li><a href="{{ route('penyakit.bobot') }}">Bobot Penyakit Pakar</a></li>
                         <li><a href="{{ route('gejala.index') }}">Data Gejala</a></li>
                         <li><a href="{{ route('gejala.bobot') }}">Bobot Gejala</a></li>
                     </ul>

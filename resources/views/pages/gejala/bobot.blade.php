@@ -19,8 +19,8 @@
 
     <div class="card m-b-30">
         <div class="card-body">
-            <h4 class="mt-0 header-title">Daftar Gejala</h4>
-            <p class="text-muted m-b-30 font-14">17 Gejala yang digunakan pada sistem pakar</p>
+            <h4 class="mt-0 header-title">Data Bobot Gejala</h4>
+            <p class="text-muted m-b-30 font-14">Bobot merupakan parameter yang digunakan untuk menunjukkan tingkat keakuratan elemen atau fitur tertentu dalam proses pengambilan keputusan. <br/> Bobot gejala pada tabel di bawah ini bersumber dari pakar yaitu Ir. Oktarina, M. P.</p>
 
             <div class="table-rep-plugin">
                 <div class="table-responsive" data-pattern="priority-columns">

@@ -19,7 +19,13 @@
                 <li>
                     <a href="{{ route('dashboard.index') }}" class="waves-effect">
                         <i class="mdi mdi-airplay"></i>
-                        <span> Dashboard </span>
+                        <span>Dashboard </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('calculate.index') }}" class="waves-effect">
+                        <i class="mdi mdi-gauge"></i>
+                        <span>Calculate Penyakit </span>
                     </a>
                 </li>
 

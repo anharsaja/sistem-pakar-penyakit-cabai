@@ -38,8 +38,8 @@
                             @forelse($bobotpakars as $index => $bobot)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $bobot->penyakit->nama_penyakit ?? '-' }}</td>
-                                    <td>{{ $bobot->gejala->nama_gejala ?? '-' }}</td>
+                                    <td>{{ $bobot->disease->nama_penyakit ?? '-' }}</td>
+                                    <td>{{ $bobot->symptom->nama_gejala ?? '-' }}</td>
                                     <td>{{ $bobot->mb}}</td>
                                     <td>{{ $bobot->md}}</td>
                                 </tr>

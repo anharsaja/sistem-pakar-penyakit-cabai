@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Gejala;
-use App\Models\Penyakit;
 use Illuminate\Database\Seeder;
 use App\Models\BobotGejala;
+use App\Models\Disease;
+use App\Models\Symptom;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BobotGejalaSeeder extends Seeder
 {
@@ -39,11 +38,11 @@ class BobotGejalaSeeder extends Seeder
         ];
 
         // Pastikan penyakit & gejala tersedia
-        $p1 = Penyakit::where('kode', 'P1')->first();
-        $p2 = Penyakit::where('kode', 'P2')->first();
-        $p3 = Penyakit::where('kode', 'P3')->first();
-        $p4 = Penyakit::where('kode', 'P4')->first();
-        $p5 = Penyakit::where('kode', 'P5')->first();
+        $p1 = Disease::where('kode', 'P1')->first();
+        $p2 = Disease::where('kode', 'P2')->first();
+        $p3 = Disease::where('kode', 'P3')->first();
+        $p4 = Disease::where('kode', 'P4')->first();
+        $p5 = Disease::where('kode', 'P5')->first();
 
         if (!$p1 || !$p2 || !$p3 || !$p4 || !$p5) {
             $this->command->error('Seeder gagal: salah satu kode penyakit P1..P5 tidak ditemukan. Jalankan dulu PenyakitSeeder.');
@@ -65,14 +64,14 @@ class BobotGejalaSeeder extends Seeder
             $rows = [];
 
             foreach ($matrix as $gejalaKode => $weights) {
-                $gejala = Gejala::where('kode', $gejalaKode)->first();
+                $gejala = Symptom::where('kode', $gejalaKode)->first();
 
                 if (!$gejala) continue;
 
                 foreach ($weights as $idx => $bobot) {
                     $rows[] = [
-                        'penyakit_id' => $penyakitIds[$idx],
-                        'gejala_id'   => $gejala->id,
+                        'disease_id' => $penyakitIds[$idx],
+                        'symptom_id'   => $gejala->id,
                         'bobot'       => $bobot,
                         'created_at'  => now(),
                         'updated_at'  => now(),

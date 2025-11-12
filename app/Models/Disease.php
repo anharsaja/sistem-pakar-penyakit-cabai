@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Penyakit extends Model
+class Disease extends Model
 {
     protected $guarded = ['id'];
 
@@ -15,16 +15,16 @@ class Penyakit extends Model
         return $this->hasMany(SaranPenanganan::class);
     }
 
-    public function gejalas()
+    public function symptom()
     {
-        return $this->belongsToMany(Gejala::class, 'bobot_gejalas')
+        return $this->belongsToMany(Symptom::class, 'bobot_gejalas')
             ->withPivot('bobot')
             ->withTimestamps();
     }
 
-    public function gejalaPakar()
+    public function symptomPakar()
     {
-        return $this->belongsToMany(Gejala::class, 'bobot_pakar')
+        return $this->belongsToMany(Symptom::class, 'bobot_pakar')
             ->withPivot('mb', 'md')
             ->withTimestamps();
     }

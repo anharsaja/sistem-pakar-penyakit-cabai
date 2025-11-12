@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Gejala;
+use App\Models\Symptom;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class GejalaSeeder extends Seeder
 {
@@ -33,6 +32,6 @@ class GejalaSeeder extends Seeder
             ['kode' => 'G17', 'nama_gejala' => 'Buah Keriput'],
         ];
 
-        Gejala::insert($data);
+        Symptom::insert($data);
     }
 }

@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Gejala;
-use App\Models\Penyakit;
 use App\Models\BobotPakar;
+use App\Models\Disease;
+use App\Models\Symptom;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BobotPakarSeeder extends Seeder
 {
@@ -50,13 +49,13 @@ class BobotPakarSeeder extends Seeder
         ];
 
         foreach ($data as $row) {
-            $penyakit = Penyakit::where('nama_penyakit', $row['penyakit'])->first();
-            $gejala   = Gejala::where('nama_gejala', $row['gejala'])->first();
+            $penyakit = Disease::where('nama_penyakit', $row['penyakit'])->first();
+            $gejala   = Symptom::where('nama_gejala', $row['gejala'])->first();
 
             if ($penyakit && $gejala) {
                 BobotPakar::updateOrCreate([
-                    'penyakit_id' => $penyakit->id,
-                    'gejala_id'   => $gejala->id,
+                    'disease_id' => $penyakit->id,
+                    'symptom_id'   => $gejala->id,
                 ], [
                     'mb' => $row['mb'],
                     'md' => $row['md'],

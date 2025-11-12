@@ -58,7 +58,7 @@
         <div class="form-group row align-items-center">
             <div class="col-md-8">
             <h6 class="text-muted fw-400 mb-2">Pilih Gejala ${i}</h6>
-            <select name="gejala_id[]" class="select2 form-control custom-select" style="width: 100%; height:36px;" required>
+            <select name="symptom_id[]" class="select2 form-control custom-select" style="width: 100%; height:36px;" required>
                 <option value="">-- Pilih Gejala --</option>
                 @foreach ($gejalas as $gejala)
                 <option value="{{ $gejala->id }}">{{ $gejala->nama_gejala }}</option>

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gejala;
-use Illuminate\Http\Request;
+use App\Models\Symptom;
 
 class CalculateController extends Controller
 {
     public function index()
     {
-        $gejalas = Gejala::all();
+        $gejalas = Symptom::all();
         return view('pages.calculate.index', compact('gejalas'));
     }
 }

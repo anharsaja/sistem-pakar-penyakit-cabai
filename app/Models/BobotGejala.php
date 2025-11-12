@@ -8,13 +8,13 @@ class BobotGejala extends Model
 {
     protected $guarded = ['id'];
 
-    public function penyakit()
+    public function disease()
     {
-        return $this->belongsTo(Penyakit::class);
+        return $this->belongsTo(Disease::class);
     }
 
-    public function gejala()
+    public function symptom()
     {
-        return $this->belongsTo(Gejala::class);
+        return $this->belongsTo(Symptom::class);
     }
 }

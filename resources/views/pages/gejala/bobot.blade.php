@@ -40,7 +40,7 @@
                                     @foreach ($penyakits as $penyakit)
                                         @php
                                             // Cari relasi pivot antara penyakit dan gejala
-                                            $pivot = $penyakit->gejalas->firstWhere('id', $gejala->id);
+                                            $pivot = $penyakit->symptom->firstWhere('id', $gejala->id);
                                         @endphp
                                         <td>{{ $pivot ? $pivot->pivot->bobot : '-' }}</td>
                                     @endforeach

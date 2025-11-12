@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gejala extends Model
+class Symptom extends Model
 {
     protected $guarded = ['id'];
 
-    public function penyakits()
+    public function disease()
     {
-        return $this->belongsToMany(Penyakit::class, 'bobot_gejalas')
+        return $this->belongsToMany(Disease::class, 'bobot_gejalas')
             ->withPivot('bobot')
             ->withTimestamps();
     }
 
-    public function penyakitPakar()
+    public function diseasePakar()
     {
-        return $this->belongsToMany(Penyakit::class, 'bobot_pakar')
+        return $this->belongsToMany(Disease::class, 'bobot_pakar')
             ->withPivot('mb', 'md')
             ->withTimestamps();
     }

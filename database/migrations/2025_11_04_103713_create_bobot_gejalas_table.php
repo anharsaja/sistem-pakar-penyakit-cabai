@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('bobot_gejalas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('penyakit_id')->constrained('penyakits')->onDelete('cascade');
-            $table->foreignId('gejala_id')->constrained('gejalas')->onDelete('cascade');
+            $table->foreignId('disease_id')->constrained('diseases')->onDelete('cascade');
+            $table->foreignId('symptom_id')->constrained('symptoms')->onDelete('cascade');
             $table->float('bobot')->default(0);
             $table->timestamps();
-            $table->unique(['penyakit_id', 'gejala_id']);
+            $table->unique(['disease_id', 'symptom_id']);
         });
     }
 

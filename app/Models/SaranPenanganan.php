@@ -8,8 +8,8 @@ class SaranPenanganan extends Model
 {
     protected $guarded = ['id'];
 
-    public function penyakit()
+    public function disease()
     {
-        return $this->belongsTo(Penyakit::class);
+        return $this->belongsTo(Disease::class);
     }
 }

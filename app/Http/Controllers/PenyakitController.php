@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Penyakit;
 use App\Models\BobotPakar;
-use Illuminate\Http\Request;
+use App\Models\Disease;
 use Illuminate\Routing\Controller;
 
 class PenyakitController extends Controller
 {
     public function index()
     {
-        $penyakits = Penyakit::all();
+        $penyakits = Disease::all();
         return view('pages.penyakit.index', compact('penyakits'));
     }
 
     public function bobot()
     {
-        $bobotpakars = BobotPakar::with(['penyakit', 'gejala'])->get();
+        $bobotpakars = BobotPakar::with(['disease', 'symptom'])->get();
 
-        return view('pages..penyakit.bobot', compact('bobotpakars'));
+        return view('pages.penyakit.bobot', compact('bobotpakars'));
     }
 }

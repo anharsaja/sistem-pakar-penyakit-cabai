@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Penyakit;
+use App\Models\Disease;
 use App\Models\SaranPenanganan;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PenyakitSeeder extends Seeder
 {
@@ -58,14 +57,14 @@ class PenyakitSeeder extends Seeder
         ];
 
         foreach ($penyakits as $p) {
-            $penyakit = Penyakit::create([
+            $penyakit = Disease::create([
                 'kode' => $p['kode'],
                 'nama_penyakit' => $p['nama_penyakit'],
             ]);
 
             foreach ($p['saran'] as $s) {
                 SaranPenanganan::create([
-                    'penyakit_id' => $penyakit->id,
+                    'disease_id' => $penyakit->id,
                     'saran' => $s,
                 ]);
             }

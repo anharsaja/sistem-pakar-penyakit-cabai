@@ -18,4 +18,4 @@ Route::get('/gejala/bobot', [GejalaController::class, 'bobot'])->name('gejala.bo
 
 
 Route::get('/calculate', [CalculateController::class, 'index'])->name('calculate.index');
-Route::post('/calculate', [CalculateController::class, 'deteksi'])->name('calculate.deteksi');
+Route::post('/calculate', [CalculateController::class, 'calculate'])->name('calculate.deteksi');

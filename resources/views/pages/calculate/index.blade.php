@@ -3,6 +3,22 @@
 @section('title', 'Calculate Penyakit')
 
 @section('content')
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="btn-group float-right">
+                    <ol class="breadcrumb hide-phone p-0 m-0">
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Calculate</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Sistem Pakar Penyakit Cabai</h4>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-lg-8">
             <div class="card m-b-30">
@@ -58,7 +74,7 @@
         <div class="form-group row align-items-center">
             <div class="col-md-8">
             <h6 class="text-muted fw-400 mb-2">Pilih Gejala ${i}</h6>
-            <select name="symptom_id[]" class="select2 form-control custom-select" style="width: 100%; height:36px;" required>
+            <select name="gejala_id[]" class="select2 form-control custom-select" style="width: 100%; height:36px;" required>
                 <option value="">-- Pilih Gejala --</option>
                 @foreach ($gejalas as $gejala)
                 <option value="{{ $gejala->id }}">{{ $gejala->nama_gejala }}</option>
@@ -67,7 +83,7 @@
             </div>
             <div class="col-md-4">
             <h6 class="text-muted fw-400 mb-2">Nilai CF</h6>
-            <input type="number" step="0.01" min="0" max="1" class="form-control" name="cf_value[]" placeholder="0 - 1" required>
+            <input type="number" step="0.1" min="0" max="1" class="form-control" name="cf_value[]" placeholder="0 - 1" required>
             </div>
         </div>
     `;

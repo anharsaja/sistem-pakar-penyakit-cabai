@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Calculate Penyakit')
+@section('title', 'Data Penyakit')
 
 @section('content')
-
     <div class="row">
         <div class="col-sm-12">
             <div class="page-title-box">
@@ -18,9 +17,8 @@
         </div>
     </div>
 
-
-    <div class="row">
-        <div class="col-lg-8">
+    <div class="card m-b-30">
+        <div class="card-body">
             <div class="card m-b-30">
                 <div class="card-body">
                     <h4 class="mt-0 header-title">Calculate Penyakit</h4>
@@ -99,5 +97,4 @@
             }
         });
     </script>
-
 @endsection

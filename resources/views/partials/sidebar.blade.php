@@ -6,7 +6,7 @@
     <div class="topbar-left">
         <div class="text-center">
             <a href="{{ route('dashboard.index') }}" class="logo">
-                <i class="mdi mdi-assistant"></i> Annex
+                <i class="mdi mdi-assistant"></i> Sistem Pakar
             </a>
         </div>
     </div>

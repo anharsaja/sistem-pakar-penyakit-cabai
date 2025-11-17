@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode')->unique();
             $table->string('nama_penyakit');
-            $table->string('description')->default('');
+            $table->longText('description');
             $table->timestamps();
         });
     }

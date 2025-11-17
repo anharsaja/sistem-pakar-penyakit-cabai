@@ -42,6 +42,19 @@
                         @endforeach
                     </tbody>
                 </table>
+                @if ($topResult)
+                    <h3>Penyakit dengan kemungkinan terbesar:</h3>
+                    <h2>{{ $topResult['penyakit'] }} ({{ $topResult['cf'] }}%)</h2>
+
+                    <h4>Deskripsi:</h4>
+                    <p>{{ $topResult['deskripsi'] }}</p>
+
+                    <h4>Langkah Penanganan:</h4>
+                    @foreach ($topResult['penanganan'] as $s)
+                        <li>{{ $s }}</li>
+                    @endforeach
+                @endif
+
 
                 <!-- Grafik -->
                 <div class="mt-5">

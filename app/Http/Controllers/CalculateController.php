@@ -38,22 +38,18 @@ class CalculateController extends Controller
         foreach ($diseases as $disease) {
             $cfCombine = 0;
 
-            // Ambil data pakar untuk penyakit ini
             $rules = BobotPakar::where('disease_id', $disease->id)->get();
 
             foreach ($rules as $rule) {
                 $symptomId = $rule->symptom_id;
 
-                // Cek apakah user memasukkan gejala ini
                 if (!isset($userSymptoms[$symptomId])) continue;
 
                 $cfUser = $userSymptoms[$symptomId];
                 $cfExpert = $rule->mb - $rule->md;
 
-                // Hitung CF sementara
                 $cfCurrent = $cfUser * $cfExpert;
 
-                // Gabungkan CF
                 if ($cfCombine == 0) {
                     $cfCombine = $cfCurrent;
                 } else {
@@ -61,16 +57,28 @@ class CalculateController extends Controller
                 }
             }
 
-            // Simpan hasil
-            $results[] = [
-                'penyakit' => $disease->nama_penyakit ?? ('Penyakit ' . $disease->id),
-                'cf' => round($cfCombine * 100, 2),
-            ];
+            // HANYA tampilkan jika hasil > 0
+            $cfPercentage = round($cfCombine * 100, 2);
+
+            if ($cfPercentage > 0) {
+                $results[] = [
+                    'id' => $disease->id,
+                    'penyakit' => $disease->nama_penyakit ?? ('Penyakit ' . $disease->id),
+                    'cf' => $cfPercentage,
+                    'deskripsi' => $disease->description ?? '',
+                    'penanganan' => $disease->saranPenanganan->pluck('saran')->toArray(),
+                ];
+            }
         }
+
 
         // Urutkan berdasarkan CF tertinggi
         usort($results, fn($a, $b) => $b['cf'] <=> $a['cf']);
 
-        return view('pages.calculate.result', compact('results'));
+        // Ambil penyakit dengan CF terbesar (jika ada)
+        $topResult = $results[0] ?? null;
+
+        // dd($topResult);
+        return view('pages.calculate.result', compact('results', 'topResult'));
     }
 }

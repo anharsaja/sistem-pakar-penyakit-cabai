@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\CalculateController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 
 // login
@@ -23,6 +22,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/history', [CalculateController::class, 'history'])->name('calculate.history');
+    Route::get('/admin/history/{id}', [CalculateController::class, 'historyShow'])
+        ->name('calculate.history.show');
     // Tambahkan route-CRUD untuk penyakit, gejala, bobot, dll
 });
 
@@ -36,5 +38,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/gejala/bobot', [GejalaController::class, 'bobot'])->name('gejala.bobot');
 
     Route::get('/calculate', [CalculateController::class, 'index'])->name('calculate.index');
-    Route::post('/calculate', [CalculateController::class, 'calculate'])->name('calculate.deteksi'); 
+    Route::post('/calculate', [CalculateController::class, 'calculate'])->name('calculate.deteksi');
 });

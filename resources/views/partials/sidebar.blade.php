@@ -28,6 +28,14 @@
                         <span>Calculate Penyakit </span>
                     </a>
                 </li>
+                @if (auth()->user()->role === 'admin')
+                    <li>
+                        <a href="{{ route('calculate.history') }}" class="waves-effect">
+                            <i class="mdi mdi-calendar-clock"></i>
+                            <span>History (Admin)</span>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect">

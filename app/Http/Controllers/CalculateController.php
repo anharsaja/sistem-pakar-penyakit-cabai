@@ -100,4 +100,23 @@ class CalculateController extends Controller
         // dd($topResult);
         return view('pages.calculate.result', compact('results', 'topResult'));
     }
+
+    public function history()
+    {
+        $histories = Consultation::with(['disease', 'symptoms.symptom', 'user'])
+            // ->where('user_id', Auth::user()->id)
+            ->orderBy('consulted_at', 'desc')
+            ->get();
+
+        return view('pages.calculate.history', compact('histories'));
+    }
+
+    public function historyShow($id)
+    {
+        $history = Consultation::with(['disease.saranPenanganan', 'symptoms.symptom', 'user'])
+            ->where('user_id', Auth::user()->id)
+            ->findOrFail($id);
+
+        return view('pages.calculate.historyShow', compact('history'));
+    }
 }

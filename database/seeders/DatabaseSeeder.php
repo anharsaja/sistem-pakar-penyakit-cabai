@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
             'role'  => 'admin',
             'password' => bcrypt('admin'),
         ]);
+        User::factory()->create([
+            'name' => 'user',
+            'email' => 'user@gmail.com',
+            'role'  => 'user',
+            'password' => bcrypt('user'),
+        ]);
 
         $this->call(GejalaSeeder::class);
         $this->call(PenyakitSeeder::class);

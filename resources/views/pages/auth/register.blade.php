@@ -37,6 +37,26 @@
                             @enderror
                         </div>
                     </div>
+                    {{-- phone --}}
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input class="form-control" type="text" name="phone" value="{{ old('phone') }}" required
+                                placeholder="Phone">
+                            @error('phone')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- address --}}
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <input class="form-control" type="text" name="address" value="{{ old('address') }}" required
+                                placeholder="Address">
+                            @error('address')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
 
                     {{-- Password --}}
                     <div class="form-group row">

@@ -7,6 +7,7 @@ use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\CalculateController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 // login
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -31,6 +32,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     // Semua user (termasuk admin) yang sudah login bisa ke sini
     Route::get('/', [UserController::class, 'index'])->name('dashboard.index');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     // Route konsul user biasa
     Route::get('/penyakit', [PenyakitController::class, 'index'])->name('penyakit.index');
     Route::get('/penyakit/bobot', [PenyakitController::class, 'bobot'])->name('penyakit.bobot');

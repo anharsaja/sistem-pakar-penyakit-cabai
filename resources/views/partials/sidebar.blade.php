@@ -47,6 +47,7 @@
                         <li><a href="{{ route('penyakit.bobot') }}">Bobot Penyakit Pakar</a></li>
                         <li><a href="{{ route('gejala.index') }}">Data Gejala</a></li>
                         <li><a href="{{ route('gejala.bobot') }}">Bobot Gejala</a></li>
+                        <li><a href="{{ route('informasi.index') }}">Informasi Pakar</a></li>
                     </ul>
                 </li>
             </ul>

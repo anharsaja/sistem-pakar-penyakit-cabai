@@ -21,12 +21,32 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'role'  => 'admin',
+            'phone' => '081234567890',
+            'address' => 'Jl. Contoh Alamat No.123, Kota Contoh',
             'password' => bcrypt('admin'),
         ]);
         User::factory()->create([
-            'name' => 'user',
-            'email' => 'user@gmail.com',
+            'name' => 'Budi Wahyudi',
+            'email' => 'user1@gmail.com',
             'role'  => 'user',
+            'phone' => '081234567890',
+            'address' => 'Jl. Contoh Alamat No.123, Kota Contoh',
+            'password' => bcrypt('user'),
+        ]);
+        User::factory()->create([
+            'name' => 'Dendi Suharto',
+            'email' => 'user2@gmail.com',
+            'role'  => 'user',
+            'phone' => '081234567890',
+            'address' => 'Jl. Contoh Alamat No.123, Kota Contoh',
+            'password' => bcrypt('user'),
+        ]);
+        User::factory()->create([
+            'name' => 'Sugeng Cahyadi',
+            'email' => 'user3@gmail.com',
+            'role'  => 'user',
+            'phone' => '081234567890',
+            'address' => 'Jl. Contoh Alamat No.123, Kota Contoh',
             'password' => bcrypt('user'),
         ]);
 

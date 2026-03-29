@@ -58,33 +58,13 @@
                                     <div class="col-md-3">
                                         <div class="p-4">
                                             <h4 class="text-black">Phone Number</h4>
-                                            <span>0092-333-456734</span>
+                                            <span>{{ $user->phone }}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="p-4">
                                             <h4 class="text-black">Address</h4>
-                                            <span>7C Street, Main Market New York City</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="p5 b-b">
-                                <div class="pl-4 mt-4">
-                                    <h5>Personal Information</h5>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="p-4">
-                                            <h4 class="text-black">Facebook</h4>
-                                            <span>Facebook.com/paper-panel</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="p-4">
-                                            <h4 class="text-black">Phone Number</h4>
-                                            <span>0092-333-456734</span>
+                                            <span>{{ $user->address }}</span>
                                         </div>
                                     </div>
 
